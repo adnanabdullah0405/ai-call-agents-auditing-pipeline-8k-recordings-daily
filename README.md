@@ -65,9 +65,24 @@ I built an end-to-end LangGraph pipeline that:
 
 ---
 
-## 🏗️ LangGraph Pipeline Architecture
+## 🏗️ System Architecture
 
-![System Architecture](architecture/system-architecture.png)
+> ⚠️ *The diagram below is a simplified conceptual overview for illustration purposes only. It does not represent the actual system design or implementation.*
+
+```mermaid
+graph TD
+    A[SFTP Server\nCall Recordings] -->|Connect & List Files| B[File Processor]
+    B -->|Download Audio| C[AWS S3 Storage]
+    C -->|Audio File| D[Groq Whisper\nTranscription]
+    D -->|Transcript\nEnglish + Urdu| E[GPT-4o\nCompliance Analyzer]
+    E -->|Violations\nAgent Score\nSummary| F[Results Storage]
+    F --> G[CSV Export]
+    F --> H[MySQL Database]
+    B -->|Loop: Next File| B
+    E -->|Daily Summary| I[Management Report]
+```
+---
+
 
 > **Intelligent batch processing loop** — connects to SFTP, lists 
 > all recordings, processes each file through a 
