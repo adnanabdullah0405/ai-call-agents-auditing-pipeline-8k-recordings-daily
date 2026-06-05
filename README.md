@@ -71,16 +71,15 @@ I built an end-to-end LangGraph pipeline that:
 
 ```mermaid
 graph TD
-    A[SFTP Server\nCall Recordings] -->|Connect & List Files| B[File Processor]
-    B -->|Download Audio| C[AWS S3 Storage]
-    C -->|Audio File| D[Groq Whisper\nTranscription]
-    D -->|Transcript\nEnglish + Urdu| E[GPT-4o\nCompliance Analyzer]
-    E -->|Violations\nAgent Score\nSummary| F[Results Storage]
-    F --> G[CSV Export]
-    F --> H[MySQL Database]
+    A[Call Recording Server] -->|Fetch Files| B[File Processor]
+    B -->|Download Audio| C[Cloud Storage]
+    C -->|Audio File| D[Transcription Engine]
+    D -->|Transcript| E[AI Compliance Analyzer]
+    E -->|Results| F[Database]
+    F --> G[Report]
     B -->|Loop: Next File| B
-    E -->|Daily Summary| I[Management Report]
 ```
+
 ---
 
 
