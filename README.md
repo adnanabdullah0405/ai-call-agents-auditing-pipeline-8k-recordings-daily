@@ -76,36 +76,6 @@ I built an end-to-end LangGraph pipeline that:
 
 ---
 
-## 🔄 Pipeline Flow
-
-```mermaid
-graph TD
-    A[SFTP Server - 8000 recordings] --> B[init_config]
-    B --> C[connect_sftp]
-    C --> D[list_files]
-    
-    D -->|No files| E[summarize → __end__]
-    D -->|Files found| F[setup_clients]
-    
-    F --> G[select_next_file]
-    G --> H[parse_metadata]
-    H --> I[download_file]
-    I --> J[upload_s3]
-    J --> K[🎙️ Groq Whisper Transcribe]
-    K --> L[🤖 GPT-4o Compliance Analysis]
-    
-    L --> M{Compliant?}
-    M -->|✅ Compliant| N[save_csv + save_mysql]
-    M -->|❌ Non-compliant| O[Flag for QA Team]
-    O --> N
-    
-    N --> P[cleanup]
-    P -->|More files| G
-    P -->|Done| Q[Daily Summary Report]
-    Q --> E
-```
-
----
 
 ## 🤖 Compliance Evaluation Criteria
 
