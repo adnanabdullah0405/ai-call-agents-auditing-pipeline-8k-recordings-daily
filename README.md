@@ -16,7 +16,7 @@
 
 ## 🚨 The Problem — A CEO-Level Crisis
 
-Oladoc operates **50 call agents** who contact customers daily to 
+The company operates **50 call agents** who contact customers daily to 
 present subscription plans — offering healthcare services charged 
 directly to JazzCash mobile accounts.
 
@@ -116,12 +116,29 @@ Each call is scored by the LLM agent on:
     └── sample-compliance-report/
 ```
 
+## 🎙️ Sample Input — Real Call Recordings
+
+> Two anonymized sample call recordings from the production pipeline:
+
+[📞 Sample Call 1](audio_inputs/20251210-083039_3007141073_....)
+[📞 Sample Call 2](audio_inputs/20251210-083759_3064844144_....)
+
+---
+
+## 📊  Results
+
+### Compliance Analysis Output
+![Result](results/Result.png)
+![Screenshot 1](results/1.png)
+![Screenshot 2](results/2.png)
+
+### 🎥 Pipeline Demo Video
+[![Watch Demo](https://img.shields.io/badge/▶_Watch_Pipeline_Demo-Video-blue?style=for-the-badge)](results/Video%20processing%20.mp4)
+
 ---
 
 > ⚠️ **Note:** This repository showcases the architecture and 
-> design of a production compliance system. Source code is 
-> proprietary to Oladoc.
-
+> design of a production compliance system.
 ---
 
 ## 📫 Contact
@@ -134,4 +151,4 @@ Each call is scored by the LLM agent on:
 ---
 
 *Built with Groq Whisper + GPT-4o · Processing 8,000+ calls daily · 
-85% reduction in wrong booking complaints*
+80% reduction in wrong booking complaints*
