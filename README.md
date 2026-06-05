@@ -57,7 +57,7 @@ I built an end-to-end LangGraph pipeline that:
 | Metric | Value |
 |--------|-------|
 | Call recordings processed daily | 8,000+ |
-| Wrong booking complaints reduced | 85% |
+| Wrong booking complaints reduced | 80% |
 | Unauthorized subscriptions reduced | 70% |
 | Manual QA team replaced | ✅ Fully automated |
 | Agents audited daily | 50 |
